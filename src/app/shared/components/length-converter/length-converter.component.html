@@ -1,0 +1,42 @@
+<section class="currency">
+    <div class="container">
+        <form>
+            <div class="thumbDiv">
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>From</mat-label>
+                        <input matInput name="fromValue" type="number" [(ngModel)]="unitConversionForm.fromValue" (keyup)="convert()">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Unit</mat-label>
+                        <mat-select name="fromUnit" [(ngModel)]="unitConversionForm.fromUnit" (selectionChange)="convert()">
+                            <mat-option *ngFor="let unit of availableUnits" [value]="unit">{{unit}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>To</mat-label>
+                        <input matInput name="toValue" type="number" [(ngModel)]="unitConversionForm.toValue" (keyup)="convert(true)">
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Unit</mat-label>
+                        <mat-select name="toUnit" [(ngModel)]="unitConversionForm.toUnit"  (selectionChange)="convert()">
+                            <mat-option *ngFor="let unit of availableUnits" [value]="unit">{{unit}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+        <div class="conversion-value" *ngIf="isConverted">
+            <label>Conversion Result : </label>
+            <span >{{conversionResult}}</span>
+        </div>
+    </div>
+</section>

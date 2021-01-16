@@ -1,0 +1,28 @@
+.mr-2{
+    margin-right:10px;
+    }
+.header {
+    background: #eee;
+    padding: 10px 0;
+    .mat-toolbar{
+        justify-content: space-between;
+        @media (max-width:480px){
+          display:block;
+          height: auto;
+        }
+     &.mat-primary {
+        background:transparent;
+        color: #fff;
+      }
+      .logo{
+          width:110px;
+          @media (max-width:480px){
+            text-align: center;
+            margin: 0 auto;
+          }
+          img{
+            max-width:100%;
+          }
+      }
+    }
+}
