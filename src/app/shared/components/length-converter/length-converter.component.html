@@ -34,9 +34,9 @@
                 </div>
             </div>
         </form>
-        <div class="conversion-value" *ngIf="isConverted">
-            <label>Conversion Result : </label>
-            <span >{{conversionResult}}</span>
+        <div class="conversion-value">
+            <label>Conversion Result:</label>
+            <span *ngIf="isConverted">{{conversionResult}}</span>
         </div>
     </div>
 </section>
