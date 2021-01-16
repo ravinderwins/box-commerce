@@ -34,17 +34,25 @@ export class CurrencyConverterComponent implements OnInit {
 
   ngOnInit(): void {
     this.currencyConverterService.getAvailableCurrencies().subscribe(currencies => {
-      this.availableCurrencies = currencies;
+      this.availableCurrencies = currencies.sort();
     });
   }
 
   convert(reverse: boolean = false) {
     const { fromCurrency, fromAmount, toCurrency, toAmount } = this.currencyConversionForm;
-    const amount = reverse ? toAmount: fromAmount;
+    let amount = reverse ? toAmount: fromAmount;
     const tempFromCurrency = reverse ? toCurrency: fromCurrency;
     const tempToCurrency = reverse ? fromCurrency: toCurrency;
 
-    if (!amount) return;
+    amount = amount ?? 0
+    if (amount < 0) {
+      if (reverse)
+        this.currencyConversionForm.fromAmount = 0;
+      else
+        this.currencyConversionForm.toAmount = 0;
+
+      return;
+    }
 
     this.currencyConverterService.convert(amount, tempFromCurrency, tempToCurrency).subscribe(conversion => {
       if (reverse)

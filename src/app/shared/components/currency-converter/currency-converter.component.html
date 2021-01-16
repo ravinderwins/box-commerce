@@ -4,7 +4,7 @@
             <div class="form-group">
                 <mat-form-field appearance="outline">
                     <mat-label>From</mat-label>
-                    <input matInput name="fromAmount" type="number" [(ngModel)]="currencyConversionForm.fromAmount" (input)="d$inputChange()">
+                    <input matInput name="fromAmount" type="number" min="0" [(ngModel)]="currencyConversionForm.fromAmount" (input)="d$inputChange()">
                 </mat-form-field>
             </div>
             <div class="form-group">
@@ -19,7 +19,7 @@
             <div class="form-group">
                 <mat-form-field appearance="outline">
                     <mat-label>To</mat-label>
-                    <input matInput name="toAmount" type="number" [(ngModel)]="currencyConversionForm.toAmount" (input)="d$inputChange(true)">
+                    <input matInput name="toAmount" type="number" min="0" [(ngModel)]="currencyConversionForm.toAmount" (input)="d$inputChange(true)">
                 </mat-form-field>
             </div>
             <div class="form-group">
