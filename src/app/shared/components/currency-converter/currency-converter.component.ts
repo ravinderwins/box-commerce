@@ -45,7 +45,7 @@ export class CurrencyConverterComponent implements OnInit {
     const tempToCurrency = reverse ? fromCurrency: toCurrency;
 
     amount = amount ?? 0
-    if (amount < 0) {
+    if (amount <= 0) {
       if (reverse)
         this.currencyConversionForm.fromAmount = 0;
       else

@@ -1,8 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { UnitsConverterService } from '@app/services';
 import { UnitConversionForm } from '@app/models';
-import { from } from 'rxjs';
 
 @Component({
   selector: 'length-converter',

@@ -68,7 +68,7 @@ export class CurrencyConverterPageComponent implements OnInit {
   }
 
   initalizeChart() {
-    const top10Conversions = this.userConversions.slice(0, 10);
+    const top10Conversions = this.userConversions.slice(1).slice(-10);
     
     const fromSeriesData: number[] = [];
     const toSeriesData: number[] = [];
