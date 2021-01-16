@@ -23,15 +23,15 @@ Features:
 
 ## Installation Instructions
 
-1. Clone Repository
-git clone https://github.com/ravinderwins/box-commerce.git
+Clone Repository
+- git clone https://github.com/ravinderwins/box-commerce.git
 
-2. Go inside project folder
-cd box-commerce
+Go inside project folder
+- cd box-commerce
 
-3. Install node modules
-npm i
+Install node modules
+- npm i
 
-4. Run application
-ng s -o
+Run application
+- ng s -o
 
