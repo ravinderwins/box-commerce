@@ -52,7 +52,7 @@ export class CurrencyConverterComponent implements OnInit {
       else
         this.currencyConversionForm.toAmount = +conversion.toFixed(2);
 
-      this.conversionChanged.emit(this.currencyConversionForm);
+      this.conversionChanged.emit({ ...this.currencyConversionForm});
     })
   }
 
